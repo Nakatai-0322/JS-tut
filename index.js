@@ -58,10 +58,14 @@ function add(todo) {
     }
 }
 
+/*
+    関数"savedata"に関して定義
+*/
 function saveData() {
     const lists = document.querySelectorAll("li");
     const todos = [];
 
+    // 保存するデータに関して定義
     lists.forEach((li) => {
         todos.push({
             text: li.innerText,
@@ -69,5 +73,6 @@ function saveData() {
         });
     });
 
+    // 定義したデータをローカルストレージにJSON形式で保存
     localStorage.setItem("todos", JSON.stringify(todos));
 }
