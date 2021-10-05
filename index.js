@@ -5,7 +5,7 @@ const ul = document.getElementById("ul");
 
 const todos = JSON.parse(localStorage.getItem("todos"));
 
-// To Doに入力していたら
+// To Doに入力していたら*する。
 if (todos) {
     todos.forEach((todo) => {
         add(todo);
