@@ -3,6 +3,8 @@ const input = document.getElementById("input");
 const ul = document.getElementById("ul");
 
 const todos = JSON.parse(localStorage.getItem("todos"));
+
+
 if (todos) {
     todos.forEach((todo) => {
         add(todo);
