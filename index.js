@@ -73,6 +73,6 @@ function saveData() {
         });
     });
 
-    // 定義したデータをローカルストレージにJSON形式で保存
+    // 定義したデータをローカルストレージにJSON形式に変換して保存
     localStorage.setItem("todos", JSON.stringify(todos));
 }
