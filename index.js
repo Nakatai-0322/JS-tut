@@ -5,7 +5,7 @@ const ul = document.getElementById("ul");
 
 const todos = JSON.parse(localStorage.getItem("todos"));
 
-
+// To Doに入力していたら
 if (todos) {
     todos.forEach((todo) => {
         add(todo);
@@ -17,9 +17,14 @@ form.addEventListener("submit", function (event) {
     add();
 });
 
+/*
+    関数"todo"に関して定義
+*/ 
 function add(todo) {
+    // デフォルトで"todoText"に入力値を適用
     let todoText = input.value;
 
+    // 何をさせる処理だっけ...?忘れた。
     if (todo) {
         todoText = todo.text;
     }
@@ -34,12 +39,14 @@ function add(todo) {
             li.classList.add("text-decoration-line-through");
         }
 
+        // 右クリックされたときの動作を定義（To Doを削除）
         li.addEventListener("contextmenu", function (event) {
             event.preventDefault();
             li.remove();
             saveData();
         });
 
+        // 左クリックされたときの動作を定義（To Doを完了）
         li.addEventListener("click", function () {
                 li.classList.toggle("text-decoration-line-through");
                 saveData();
