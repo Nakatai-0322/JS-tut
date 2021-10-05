@@ -1,3 +1,4 @@
+// 変数の定義
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const ul = document.getElementById("ul");
