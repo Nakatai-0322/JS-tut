@@ -63,7 +63,7 @@ function add(todo) {
 */
 function saveData() {
     const lists = document.querySelectorAll("li");
-    const todos = [];
+    const todos = "";
 
     // 保存するデータに関して定義(入力データ＆完了状態)
     lists.forEach((li) => {
