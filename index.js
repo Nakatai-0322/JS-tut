@@ -3,6 +3,7 @@ const form = document.getElementById("form");
 const input = document.getElementById("input");
 const ul = document.getElementById("ul");
 
+// "todos"にローカルストレージのを代入。
 const todos = JSON.parse(localStorage.getItem("todos"));
 
 // To Doに入力していたら*する。
