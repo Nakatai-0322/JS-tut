@@ -6,16 +6,18 @@
 
 ## 参考元
 
-https://www.youtube.com/watch?v=E08jeQBa1D0
+<https://youtu.be/E08jeQBa1D0>
+
+『JavaScriptの「基礎」が1時間で分かる「超」入門講座【初心者向け】』
 
 コード元:
 
 ※**MITライセンスに基づくコードの利用をさせていただいております。**
 
-https://github.com/kiyodori/todo
+<https://github.com/kiyodori/todo>
 
 Thanks!
 
 ## App-Page
 
-https://nakatai.ga/JS-tut/
+<https://nakatai.ga/JS-tut/>
