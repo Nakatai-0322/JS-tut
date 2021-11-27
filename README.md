@@ -18,4 +18,4 @@
 
 ## App-Page
 
-<https://nakatai.ga/JS-tut/>
+<https://nakatai-0322.github.io/JS-tut/>
