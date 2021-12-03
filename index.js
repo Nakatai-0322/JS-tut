@@ -1,15 +1,11 @@
-// 変数の定義
 const form = document.getElementById("form");
 const input = document.getElementById("input");
 const ul = document.getElementById("ul");
 
-// "todos"にローカルストレージのを代入。
 const todos = JSON.parse(localStorage.getItem("todos"));
-
-// To Doに入力していたら*する。
 if (todos) {
     todos.forEach((todo) => {
-        add(todo);
+    add(todo);
     });
 }
 
@@ -18,62 +14,48 @@ form.addEventListener("submit", function (event) {
     add();
 });
 
-/*
-    関数"todo"に関して定義
-*/ 
 function add(todo) {
-    // デフォルトで"todoText"に入力値を適用
-    let todoText = input.value;
-
-    // 何をさせる処理だっけ...?忘れた。
+    let todoText = input.value; 
     if (todo) {
         todoText = todo.text;
-    }
-
+    }   
     if (todoText) {
-        const li = document.createElement("li");
+    const li = document.createElement("li");
 
-        li.innerText = todoText;
-        li.classList.add('list-group-item')
+    li.innerText = todoText;
+    li.classList.add('list-group-item')
 
-        if (todo && todo.completed) {
-            li.classList.add("text-decoration-line-through");
-        }
-
-        // 右クリックされたときの動作を定義（To Doを削除）
-        li.addEventListener("contextmenu", function (event) {
-            event.preventDefault();
-            li.remove();
-            saveData();
-        });
-
-        // 左クリックされたときの動作を定義（To Doを完了）
-        li.addEventListener("click", function () {
-                li.classList.toggle("text-decoration-line-through");
-                saveData();
-        });
-
-        ul.appendChild(li);
-        input.value = "";
-        saveData();
+    if (todo && todo.completed) {
+        li.classList.add("text-decoration-line-through");
     }
-}
 
-/*
-    関数"savedata"に関して定義
-*/
-function saveData() {
-    const lists = document.querySelectorAll("li");
-    const todos = "";
-
-    // 保存するデータに関して定義(入力データ＆完了状態)
-    lists.forEach((li) => {
-        todos.push({
-            text: li.innerText,
-            completed: li.classList.contains("text-decoration-line-through"),
-        });
+    li.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+        li.remove();
+        saveData();
     });
 
-    // 定義したデータをローカルストレージにJSON形式に変換して保存
+    li.addEventListener("click", function () {
+        li.classList.toggle("text-decoration-line-through");
+        saveData();
+    });
+
+    ul.appendChild(li);
+    input.value = "";
+    saveData();
+  }
+}
+
+function saveData() {
+    const lists = document.querySelectorAll("li");
+    const todos = [];
+
+    lists.forEach((li) => {
+    todos.push({
+        text: li.innerText,
+        completed: li.classList.contains("text-decoration-line-through"),
+    });
+});
+
     localStorage.setItem("todos", JSON.stringify(todos));
 }
