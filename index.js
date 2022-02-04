@@ -43,7 +43,7 @@ function add(todo) {
     ul.appendChild(li);
     input.value = "";
     saveData();
-  }
+    }
 }
 
 function saveData() {
