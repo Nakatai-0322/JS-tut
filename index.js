@@ -7,7 +7,7 @@ if (todos) {
     todos.forEach((todo) => {
     add(todo);
     });
-}
+};
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -18,7 +18,7 @@ function add(todo) {
     let todoText = input.value; 
     if (todo) {
         todoText = todo.text;
-    }   
+    }
     if (todoText) {
     const li = document.createElement("li");
 
@@ -51,11 +51,11 @@ function saveData() {
     const todos = [];
 
     lists.forEach((li) => {
-    todos.push({
-        text: li.innerText,
-        completed: li.classList.contains("text-decoration-line-through"),
+        todos.push({
+            text: li.innerText,
+            completed: li.classList.contains("text-decoration-line-through"),
+        });
     });
-});
 
     localStorage.setItem("todos", JSON.stringify(todos));
 }
