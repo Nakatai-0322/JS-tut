@@ -9,7 +9,7 @@ if (todos) {
     });
 };
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", function(event) {
     event.preventDefault();
     add();
 });
@@ -29,13 +29,13 @@ function add(todo) {
             li.classList.add("text-decoration-line-through");
         }
 
-        li.addEventListener("contextmenu", function (event) {
+        li.addEventListener("contextmenu", function(event) {
             event.preventDefault();
             li.remove();
             saveData();
         });
 
-        li.addEventListener("click", function () {
+        li.addEventListener("click", function() {
             li.classList.toggle("text-decoration-line-through");
             saveData();
         });
